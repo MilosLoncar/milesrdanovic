@@ -1,33 +1,65 @@
-import React, { Component } from 'react';
-import galleryBackground from '../../assets/images/gallery-image.jpg';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
 // import Slider from './components/galleryPage/Slider';
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css"; // This only needs to be imported once in your app
 
-let galleryImage = {
-  width: "100%",
-  height: "435px",
-  backgroundImage: `url(${galleryBackground})`,
-  backgroundRepeat: "no-repeat",
-  backgroundSize: 'cover',
-  backgroundPosition: 'center'
-};
+import data from "./images";
 
 class Gallery extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeImage: 0,
+      isOpen: false
+    };
+  }
+
+  handleImageOpen = e => {
+    this.setState({ activeImage: e.target.id, isOpen: true });
+  };
+
   render() {
+    const { isOpen } = this.state;
+
     return (
-      <section className="gallery">
-        <div className="ballery--background" style={galleryImage}></div>
-        <div className="gallery--info">
-          <h1>Galerija</h1>
-          <h3><Link to="">Izložbe</Link></h3>
-          <h3><Link to="">Gradovi i sela</Link></h3>
-          <h3><Link to="">Životinje</Link></h3>
-          <h3><Link to="">Nebo</Link></h3>
+      <div>
+        <div className="image-container">
+          {data.map((image, key) => {
+            return (
+              <img
+                className="single--image"
+                onClick={this.handleImageOpen}
+                id={key}
+                key={key}
+                src={image}
+              />
+            );
+          })}
         </div>
-      </section>
+        {isOpen && (
+          <Lightbox
+            mainSrc={data[this.state.activeImage]}
+            nextSrc={data[(this.state.activeImage + 1) % data.length]}
+            prevSrc={
+              data[(this.state.activeImage + data.length - 1) % data.length]
+            }
+            onCloseRequest={() => this.setState({ isOpen: false })}
+            onMovePrevRequest={() =>
+              this.setState({
+                activeImage:
+                  (this.state.activeImage + data.length - 1) % data.length
+              })
+            }
+            onMoveNextRequest={() =>
+              this.setState({
+                activeImage: (this.state.activeImage + 1) % data.length
+              })
+            }
+          />
+        )}
+      </div>
     );
   }
 }
-
 
 export default Gallery;

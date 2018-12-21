@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Background from "../../assets/images/main-image.jpg";
-import Parent from "../Parent";
+import H3Components from "../H3Components";
 
 let backgroundImage = {
   width: "100%",
@@ -16,15 +16,14 @@ class MainContent extends Component {
       <section className="main--content" style={backgroundImage}>
         <div className="main--text">
           <h1>Dobrodošli / Welcome</h1>
-          <Parent>
-            <div>asdadsdsa</div>
-          </Parent>
-          <h3 className="text--serb">
-            Zdravo svima! Dobrodošli na moj sajt. Nadam se da ćete uživati...
-          </h3>
-          <h3 className="text--eng">
-            Hello everyone! Welcome to my website. I hope you'll enjoy it...
-          </h3>
+          <H3Components
+            lang="serb"
+            text="Zdravo svima! Dobrodošli na moj sajt. Nadam se da ćete uživati..."
+          />
+          <H3Components
+            lang="eng"
+            text="Hello everyone! Welcome to my website. I hope you'll enjoy it..."
+          />
         </div>
       </section>
     );

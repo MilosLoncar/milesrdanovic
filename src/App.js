@@ -29,7 +29,7 @@ class App extends Component {
           <Route exact path="/" component={MainContent} />
           <Route path="/about" component={AboutContent} />
           <Route exact path="/gallery" component={Gallery} />
-          <Route exact path="/gallery/exhibitions" render={nesto} />
+          <Route exact path="/gallery/exhibitions" component={Gallery} />
           <Route path="/contact" component={Contact} />
           <Route path="/dev" render={nesto} />
           <Footer />
