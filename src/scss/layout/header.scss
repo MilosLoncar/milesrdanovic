@@ -1,0 +1,94 @@
+header {
+  background-color: #fff;
+  .site--header {
+    .site--title {
+      padding: 25px;
+      h1 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+        font-size: 36px;
+      }
+    }
+    .site--nav {
+      background-color: #525252;
+      padding: 6px 55px;
+      ul {
+        display: flex;
+        justify-content: center;
+        li {
+          list-style-type: none;
+          position: relative;
+          .submenu-toggle {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 14px;
+            margin-right: 25px;
+            color: white;
+            font-weight: 500;
+            line-height: 1.7;
+            display: inline-block;
+            .show--menu {
+              visibility: hidden;
+            }
+            &:hover {
+              .show--menu {
+                visibility: visible;
+              }
+            }
+          }
+
+          &:before {
+            content: "\2022";
+            color: #848484;
+            margin-right: 25px;
+          }
+          a {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 14px;
+            margin-right: 25px;
+            color: white;
+            font-weight: 500;
+            line-height: 1.7;
+          }
+          .show--menu {
+            &:before {
+              content: "";
+              display: block;
+              height: 10px;
+              position: absolute;
+              left: 0;
+              top: -10px;
+              width: 100%;
+            }
+            flex-direction: column;
+            padding: 10px;
+            margin: 0;
+            background-color: #fff;
+            width: 165px;
+            position: absolute;
+            left: 30px;
+            margin-top: 10px;
+            li:before {
+              display: none;
+            }
+            li {
+              margin-top: 5px;
+              margin-bottom: 5px;
+              a {
+                color: #525252;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        li:first-child:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
