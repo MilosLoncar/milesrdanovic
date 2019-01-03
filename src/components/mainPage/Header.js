@@ -37,14 +37,49 @@ class Header extends Component {
                   Galerija / Gallery
                   <ul className="show--menu">
                     <li>
-                      <Link to="/gallery/exhibitions">
+                      <span
+                        className="submenu-toggle1"
+                        onClick={this.toggleMenu}
+                        to=""
+                      >
                         Izložbe / Exhibitions
-                      </Link>
+                        <ul className="show--submenu">
+                          <li>
+                            <Link to="/gallery/drops">
+                              Kapi u fokusu / Drops in focus
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/gallery/focus">U fokusu / In focus</Link>
+                          </li>
+                        </ul>
+                      </span>
                     </li>
                     <li>
-                      <Link to="/gallery/cities">
+                      <span
+                        className="submenu-toggle1"
+                        onClick={this.toggleMenu}
+                        to=""
+                      >
                         Gradovi i sela / Cities and villages
-                      </Link>
+                        <ul className="show--submenu">
+                          <li>
+                            <Link to="/gallery/cities/beograd">Beograd</Link>
+                          </li>
+                          <li>
+                            <Link to="/gallery/cities/rovinj">Rovinj</Link>
+                          </li>
+                          <li>
+                            <Link to="/gallery/cities/uzici">Užici</Link>
+                          </li>
+                          <li>
+                            <Link to="/gallery/cities/venecija">Venecija</Link>
+                          </li>
+                          <li>
+                            <Link to="/gallery/cities/zlatibor">Zlatibor</Link>
+                          </li>
+                        </ul>
+                      </span>
                     </li>
                     <li>
                       <Link to="/gallery/animals">Životinje / Animals</Link>

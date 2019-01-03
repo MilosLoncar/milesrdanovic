@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-// import Slider from './components/galleryPage/Slider';
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css"; // This only needs to be imported once in your app
-
-import data from "./images";
 
 class Gallery extends Component {
   constructor(props) {
@@ -23,8 +20,9 @@ class Gallery extends Component {
 
     return (
       <div>
+        {this.props.haveText ? this.props.text : null}
         <div className="image-container">
-          {data.map((image, key) => {
+          {this.props.data.map((image, key) => {
             return (
               <img
                 className="single--image"
@@ -38,21 +36,30 @@ class Gallery extends Component {
         </div>
         {isOpen && (
           <Lightbox
-            mainSrc={data[this.state.activeImage]}
-            nextSrc={data[(this.state.activeImage + 1) % data.length]}
+            mainSrc={this.props.data[this.state.activeImage]}
+            nextSrc={
+              this.props.data[
+                (this.state.activeImage + 1) % this.props.data.length
+              ]
+            }
             prevSrc={
-              data[(this.state.activeImage + data.length - 1) % data.length]
+              this.props.data[
+                (this.state.activeImage + this.props.data.length - 1) %
+                  this.props.data.length
+              ]
             }
             onCloseRequest={() => this.setState({ isOpen: false })}
             onMovePrevRequest={() =>
               this.setState({
                 activeImage:
-                  (this.state.activeImage + data.length - 1) % data.length
+                  (this.state.activeImage + this.props.data.length - 1) %
+                  this.props.data.length
               })
             }
             onMoveNextRequest={() =>
               this.setState({
-                activeImage: (this.state.activeImage + 1) % data.length
+                activeImage:
+                  (this.state.activeImage + 1) % this.props.data.length
               })
             }
           />

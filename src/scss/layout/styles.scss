@@ -1,0 +1,37 @@
+.image-container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  .single--image {
+    margin: 15px;
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+  }
+}
+.drops--text {
+  padding-left: 100px;
+  background-color: #fff;
+  h1 {
+    text-transform: uppercase;
+    margin-top: 0;
+    padding-top: 50px;
+  }
+  h4 {
+    text-transform: uppercase;
+  }
+  img {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .last {
+    margin-bottom: 0;
+    padding: 20px 0 15px 0;
+  }
+  a {
+    color: #800000;
+  }
+}

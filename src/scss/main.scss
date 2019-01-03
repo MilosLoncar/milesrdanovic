@@ -1,11 +1,11 @@
 @charset 'UTF-8';
 
-// 3. Base stuff
+//  Base stuff
 @import "base/typography", "base/helpers";
 
-// 4. Layout-related sections
+//  Layout-related sections
 @import "layout/about", "layout/contact", "layout/footer", "layout/gallery",
-  "layout/header", "layout/index", "layout/mainContent", "layout/slider";
+  "layout/header", "layout/index", "layout/mainContent", "layout/styles";
 
-// 7. Vendors
+//  Vendors
 @import "vendor/normalize";
