@@ -21,6 +21,10 @@ class Header extends Component {
             <h1>Mile Srdanović</h1>
           </div>
           <nav className="site--nav">
+            <div className="bars">
+              <i class="fas fa-bars" />
+              <p>menu</p>
+            </div>
             <ul>
               <li>
                 <Link to="/">Dobrodošli / Welcome</Link>

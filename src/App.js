@@ -7,6 +7,7 @@ import Footer from "./components/mainPage/Footer";
 import AboutContent from "./components/aboutPage/AboutContent";
 import Contact from "./components/contactPage/Contact";
 import Gallery from "./components/galleryPage/Gallery";
+import Navbar from "./components/mainPage/Navbar";
 import images from "./assets/images";
 // clanci
 import politikaLogo from "./assets/images/politika-logo.jpg";
@@ -18,7 +19,7 @@ let dropsText = (
   <div className="drops--text">
     <h1>-kapi u fokusu-</h1>
     <h4>
-      "kapi u fokusu" -izlozba umetnickih fotografija- galerija "stara
+      "kapi u fokusu" -izloz ba umetnickih fotografija- galerija "stara
       kapetanija" avgust/septembar 2012.godine
     </h4>
     <h4>
@@ -53,8 +54,8 @@ let dropsText = (
     >
       <img src={eZemunLogo} />
     </a>
-    <img className="last" src={info} />
-    <h4 className="last">izlozene fotografije</h4>
+    <img style={{ marginBottom: "0px" }} src={info} />
+    <h4 style={{ marginBottom: "0px" }}>izlozene fotografije</h4>
   </div>
 );
 
@@ -96,6 +97,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
+          <Navbar />
+          {/* <Route path="/navbar" component={Navbar} /> */}
           <Route exact path="/" component={MainContent} />
           <Route path="/about" component={AboutContent} />
           <Route exact path="/gallery/exhibitions" component={Gallery} />
