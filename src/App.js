@@ -92,13 +92,22 @@ let zlatibor = () => {
 };
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      menuVisible: false
+    };
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+  toggleMenu() {
+    this.setState({ menuVisible: !this.state.menuVisible });
+  }
   render() {
     return (
       <Router>
         <div className="App">
-          <Header />
-          <Navbar />
-          {/* <Route path="/navbar" component={Navbar} /> */}
+          <Header onMenuClick={this.toggleMenu} />
+          <Navbar menuVisible={this.state.menuVisible} />
           <Route exact path="/" component={MainContent} />
           <Route path="/about" component={AboutContent} />
           <Route exact path="/gallery/exhibitions" component={Gallery} />

@@ -16,11 +16,7 @@ header {
       background-color: #525252;
       padding: 6px 55px;
       .bars {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        cursor: pointer;
-        // display: none;
+        display: none;
         i {
           font-size: 25px;
           color: #fff;
@@ -148,5 +144,24 @@ header {
   a {
     text-decoration: none;
     color: #fff;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  header {
+    .site--header {
+      .site--nav {
+        .bars {
+          display: block;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          cursor: pointer;
+        }
+        ul {
+          display: none;
+        }
+      }
+    }
   }
 }
